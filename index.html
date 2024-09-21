@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Popup (Rahul)</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Toast Popup App</h1>
+        <select class="inputs" id="horizontal-position">
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+        </select>
+        <select class="inputs" id="vertical-position">
+            <option value="top">Top</option>
+            <option value="bottom">Bottom</option>
+        </select>
+        <select class="inputs" id="status">
+            <option value="success">Success</option>
+            <option value="error">Error</option>
+            <option value="warning">Warning</option>
+            <option value="info">Info</option>
+        </select>
+        <input class="inputs" type="text" id="text-input" value="This is a toast Massage !">
+        <div class="duration-container">
+            <p>Duration :</p>
+            <input type="range" id="duration" value="4" min="4" max="10">
+        </div>
+
+        <button class="btn">Show Toast</button>
+    </div>
+    <div class="toast-container"></div>
+</body>
+
+</html>

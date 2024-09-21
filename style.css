@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    margin: 16px;
+}
+
+h1 {
+    margin-block: 12px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 18px;
+    font-family: inherit;
+}
+
+.duration-container {
+    display: flex;
+}
+
+.duration-container p {
+    margin-inline: 8px;
+}
+
+.inputs {
+    padding: 6px;
+    font-family: inherit;
+    font-weight: bolder;
+}
+
+.btn {
+    padding: 8px;
+    background-color: aqua;
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bolder;
+    min-width: 150px;
+}
+
+.toast-container {
+    position: absolute;
+    top: 1rem;
+    left: 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: white;
+    overflow: hidden;
+    padding: 0.5rem;
+}
+
+.toast {
+    padding: 0.5rem;
+    background-color: pink;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+    animation: fromLeft 0.1s ease-in;
+}
+
+.toast.go-left {
+    animation: toLeft 0.1s ease-in forwards;
+}
+.toast-container.right .toast.go-right {
+    animation: toRight 0.1s ease-in forwards;
+}
+
+@keyframes fromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes toLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes fromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes toRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.right {
+    left: auto;
+    right: 0rem;
+    
+}
+
+.toast-container.right .toast {
+    animation: fromRight 0.1s ease-in;
+}
+
+.bottom {
+    top: auto;
+    bottom: 1rem;
+}
+
+.toast.success::before {
+    content: '✓';
+}
+
+.toast.error::before {
+    content: '✗';
+}
+
+.toast.warning::before {
+    content: '⚠';
+}
+
+.toast.info::before {
+    content: 'ⓘ';
+}
+
+.toast.success {
+    background-color: green;
+}
+
+.toast.error {
+    background-color: red;
+}
+
+.toast.warning {
+    background-color: rgb(212, 191, 1);
+}
+
+.toast.info {
+    background-color: burlywood;
+}
+
+.toast span {
+    cursor: pointer;
+}
+
